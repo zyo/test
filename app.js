@@ -14,13 +14,13 @@ function draw_plane(x, y) {
   // -- 
   const xx = x3.querySelector("plane[def='base_plan_grid']");
   if (!xx) return false;
-  xx.setAttribute("size", (x + 2) + " " + (y + 2));
-  xx.setAttribute("subdivision", (x + 2) + " " + (y + 2));
+  xx.setAttribute("size", x + " " + y);
+  xx.setAttribute("subdivision", x/2 + " " + y/2);
 }
 
 /** */
 window.onload = function () {
   console.log('start ' + document.title);
   _view_x3('camera_main');
-  draw_plane (8,4);
+  draw_plane (10,6);
 }

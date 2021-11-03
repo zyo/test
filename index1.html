@@ -40,9 +40,9 @@
             <Transform>
                 <Shape>
                 <Appearance>
-                    <Material id='base_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.99"></Material>
+                    <Material id='base_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.9"></Material>
                 </Appearance>
-                <Plane def="base_plan_grid" size="10 6" primType='' subdivision='10 6'></Plane>
+                <Plane def="base_plan_grid" size="10 6" primType='LINES' subdivision='10 6'></Plane>
                 </Shape>
             </Transform>
 
@@ -58,27 +58,6 @@
             </Transform>
             </Transform>
 
-            <!-- USER Plane -->
-            <Transform def="user_plan">
-            <Transform>
-                <Shape>
-                <Appearance>
-                    <Material id='user_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.4"></Material>
-                </Appearance>
-                <Plane def="user_plan_grid" size="8 4" primType='LINES' subdivision='16 8'></Plane>
-                </Shape>
-            </Transform>
-            <Transform def="user_plan_border" scale="4 2 1">
-                <Shape isPickable="false">
-                <Appearance>
-                    <Material id='user_plan_border_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.4"></Material>
-                </Appearance>
-                <indexedlineset coordIndex="0 1 2 3 0 -1" colorPerVertex="false" lit="false">
-                    <coordinate use="point_border" />
-                </indexedlineset>
-                </Shape>
-            </Transform>
-            </Transform>
 
             <!-- Plane Axises -->
             <Transform def="plane_axises" scale="10 6 1">

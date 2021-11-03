@@ -17,7 +17,7 @@
     <h1>Test 1.8.2</h1>
 
     <X3D id="x3d_test" profile="Immersive" PrimitiveQuality="0,01" disableDoubleClick="true" disableRightDrag="false"
-    showLog="false" showStat="false"  showProgress="true"
+    showLog="false" showStat="false"  showProgress="true" 
     >
     
     <Scene>
@@ -30,7 +30,6 @@
             <Viewpoint id="camera_main" bind='true' centerOfRotation="0 0 0" position="0 0 0" orientation="0 0 0 0" fieldOfView="0.69"></Viewpoint>
           </Transform>
   
-  
         </Group>
   
         <!-- Plan AXIS-->
@@ -38,67 +37,46 @@
   
             <!-- BASE Plane -->
             <Transform def="base_plan" translation="0 0 -0.01">
-              <Transform>
-                  <Shape>
-                  <Appearance>
-                      <Material id='base_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.99"></Material>
-                  </Appearance>
-                  <Plane def="base_plan_grid" size="10 6" primType='' subdivision='10 6'></Plane>
-                  </Shape>
-              </Transform>
-
-              <Transform def="base_plan_border" scale="5 3 1">
-                  <Shape isPickable="false">
-                  <Appearance>
-                      <Material id='base_plan_border_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.7"></Material>
-                  </Appearance>
-                  <indexedlineset coordIndex="0 1 2 3 0 -1" colorPerVertex="false" lit="false">
-                      <coordinate def="point_border" point="-1 -1 0 , -1 1 0 , 1 1 0, 1 -1 0" />
-                  </indexedlineset>
-                  </Shape>
-              </Transform>
+            <Transform>
+                <Shape>
+                <Appearance>
+                    <Material id='base_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.9"></Material>
+                </Appearance>
+                <Plane def="base_plan_grid" size="10 6" primType='LINES' subdivision='10 6'></Plane>
+                </Shape>
             </Transform>
 
-            <!-- USER Plane -->
-            <Transform def="user_plan">
-              <Transform>
-                  <Shape>
-                  <Appearance>
-                      <Material id='user_plan_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.4"></Material>
-                  </Appearance>
-                  <Plane def="user_plan_grid" size="8 4" primType='LINES' subdivision='16 8'></Plane>
-                  </Shape>
-              </Transform>
-              <Transform def="user_plan_border" scale="4 2 1">
-                  <Shape isPickable="false">
-                  <Appearance>
-                      <Material id='user_plan_border_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.4"></Material>
-                  </Appearance>
-                  <indexedlineset coordIndex="0 1 2 3 0 -1" colorPerVertex="false" lit="false">
-                      <coordinate use="point_border" />
-                  </indexedlineset>
-                  </Shape>
-              </Transform>
+            <Transform def="base_plan_border" scale="5 3 1">
+                <Shape isPickable="false">
+                <Appearance>
+                    <Material id='base_plan_border_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0.3 0.3 0.3' transparency="0.7"></Material>
+                </Appearance>
+                <indexedlineset coordIndex="0 1 2 3 0 -1" colorPerVertex="false" lit="false">
+                    <coordinate def="point_border" point="-1 -1 0 , -1 1 0 , 1 1 0, 1 -1 0" />
+                </indexedlineset>
+                </Shape>
             </Transform>
+            </Transform>
+
 
             <!-- Plane Axises -->
             <Transform def="plane_axises" scale="10 6 1">
-              <Shape id="x_ax" isPickable="false">
-                  <Appearance>
-                  <Material id='plan_x_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='1 0 0' transparensy='0'></Material>
-                  </Appearance>
-                  <IndexedLineSet coordIndex="0 1 -1" colorPerVertex="false" lit="false">
-                  <Coordinate point="-0.5 0 0 ,0.5 0 0" />
-                  </IndexedLineSet>
-              </Shape>
-              <Shape id="y_ax" isPickable="false">
-                  <Appearance>
-                  <Material id='plan_y_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0 1 0' transparensy='0'></Material>
-                  </Appearance>
-                  <IndexedLineSet coordIndex="0 1 -1" colorPerVertex="false" lit="false">
-                  <Coordinate point="0 -0.5 0 ,0 0.5 0" />
-                  </IndexedLineSet>
-              </Shape>
+            <Shape id="x_ax" isPickable="false">
+                <Appearance>
+                <Material id='plan_x_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='1 0 0' transparensy='0'></Material>
+                </Appearance>
+                <IndexedLineSet coordIndex="0 1 -1" colorPerVertex="false" lit="false">
+                <Coordinate point="-0.5 0 0 ,0.5 0 0" />
+                </IndexedLineSet>
+            </Shape>
+            <Shape id="y_ax" isPickable="false">
+                <Appearance>
+                <Material id='plan_y_material' diffuseColor='0 0 0' specularColor='0 0 0' emissiveColor='0 1 0' transparensy='0'></Material>
+                </Appearance>
+                <IndexedLineSet coordIndex="0 1 -1" colorPerVertex="false" lit="false">
+                <Coordinate point="0 -0.5 0 ,0 0.5 0" />
+                </IndexedLineSet>
+            </Shape>
             </Transform>
 
             <!-- center of axises -->
