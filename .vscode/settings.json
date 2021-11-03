@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "liveServer.settings.port": 5501,
+  "editor.linkedEditing": true,
+  "files.autoSave": "onWindowChange",
+
+}
